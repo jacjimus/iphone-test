@@ -63,7 +63,7 @@ class AchievementsUnlockedListenerTest extends TestCase
 
         $response = $this->post(url('api/lesson/1'), ['watched' => 1])
             ->assertSuccessful();
-        $this->assertDatabaseHas('user_achievements', ['user_id' => 1, 'lesson_id'=>1, 'watched' => 1]);
+        $this->assertDatabaseHas('user_badges', ['user_id' => 1, 'badge_name'=> 'Beginner']);
 
         Event::assertDispatched(BadgeUnlocked::class);
     }
