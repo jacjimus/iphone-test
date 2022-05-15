@@ -31,7 +31,7 @@ class AchievementUnlockedListener
         $userAchievement->user_id = $event->user->id;
         $userAchievement->achievement = $event->achievement_name;
         if ($userAchievement->save()) {
-            $achievements = UserAchievement::where('user_id', $event->user_id)->count();
+            $achievements = UserAchievement::where('user_id', $event->user->id)->count();
             $badge_name = match ($achievements) {
                 0 => 'Beginner',
                3 => 'Intermediate',
