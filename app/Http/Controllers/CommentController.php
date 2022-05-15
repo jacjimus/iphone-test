@@ -12,7 +12,7 @@ class CommentController extends Controller
     {
         $comment = new Comment;
         if ($comment->fill($request->all())->save()) {
-            $commentsWritten = Comment::where('user_id', $comment->user_id)->count();
+            $commentsWritten = Comment::where('user_id', $request->user_id)->count();
             $achievement_name = match ($commentsWritten) {
                 1 => 'First Comment Written',
                 3 => '3 Comments Written',
