@@ -16,7 +16,7 @@ class AchievementsController extends Controller
             'next_available_achievements' => $this->nextAvailableAchievements($user->id),
             'current_badge' => $this->currentBadge($user->id),
             'next_badge' => $this->nextBadge($user->id),
-            'remaing_to_unlock_next_badge' => $this->remainingToUnlock($user->id)
+            'remaining_to_unlock_next_badge' => $this->remainingToUnlock($user->id)
         ]);
     }
 
@@ -48,7 +48,7 @@ class AchievementsController extends Controller
 
     protected function currentBadge($id): string
     {
-        return UserBadge::where('user_id', $id)->orderBy('id', 'desc')->firstOrFail()->badge_name ?? '';
+        return UserBadge::where('user_id', $id)->orderBy('id', 'desc')->first()->badge_name ?? '';
     }
 
     protected function nextBadge($id): string
