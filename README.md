@@ -1,6 +1,6 @@
 How to install the App
 
-__Clone the repository to seb root__
+__Clone the repository to web root__
 
 __cd name_of_repo__
 
