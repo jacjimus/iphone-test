@@ -16,9 +16,9 @@ use Tests\TestCase;
 
 class LessonsAndCommentsFeaturedTest extends TestCase
 {
-    private $user;
+    private User $user;
 
-    private $user_lesson;
+    private UserLesson $user_lesson;
 
     public function setUp(): void
     {
