@@ -17,6 +17,7 @@ class CreateAchievementsTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->enum('type', ['Comment' , 'Lesson']);
+            $table->integer('type_count');
             $table->timestamps();
         });
     }

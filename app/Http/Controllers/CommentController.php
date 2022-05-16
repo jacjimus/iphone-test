@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\AchievementUnlocked;
+use App\Models\Achievement;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -10,15 +11,13 @@ class CommentController extends Controller
 {
     public function store(Request $request)
     {
+        $achievements_comment_counts = Achievement::where('type', 'Comment')->get()->pluck('name', 'type_count')->toArray();
+
         $comment = new Comment;
         if ($comment->fill($request->all())->save()) {
             $commentsWritten = Comment::where('user_id', $request->user_id)->count();
-            $achievement_name = match ($commentsWritten) {
-                1 => 'First Comment Written',
-                3 => '3 Comments Written',
-                5 => '5 Comments Written',
-                10 => '10 Comments Written',
-                20 => '20 Comments Written',
+            $achievement_name = match (true) {
+                in_array($commentsWritten, array_keys($achievements_comment_counts)) => $achievements_comment_counts[$commentsWritten],
                 default => ''
             };
             if ($achievement_name) {

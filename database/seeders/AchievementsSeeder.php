@@ -16,16 +16,16 @@ class AchievementsSeeder extends Seeder
     {
         Achievement::insert(
             [
-            ['name' => 'First  Lesson', 'type' => 'Lesson'],
-            ['name' => '5 s Lesson', 'type' => 'Lesson'],
-            ['name' => '10 s Lesson', 'type' => 'Lesson'],
-            ['name' => '25 s Lesson', 'type' => 'Lesson'],
-            ['name' => '50 s Lesson', 'type' => 'Lesson'],
-            ['name' => 'First Comment Written', 'type' => 'Comment'],
-            ['name' => '3 Comments Written', 'type' => 'Comment'],
-            ['name' => '5 Comments Written', 'type' => 'Comment'],
-            ['name' => '10 Comment Written', 'type' => 'Comment'],
-            ['name' => '20 Comment Written', 'type' => 'Comment']]
+            ['name' => 'First  Lesson', 'type' => 'Lesson', 'type_count' => 1],
+            ['name' => '5 Lesson', 'type' => 'Lesson', 'type_count' => 5],
+            ['name' => '10 Lesson', 'type' => 'Lesson', 'type_count' => 10],
+            ['name' => '25 Lesson', 'type' => 'Lesson', 'type_count' => 25],
+            ['name' => '50 Lesson', 'type' => 'Lesson', 'type_count' => 50],
+            ['name' => 'First Comment Written', 'type' => 'Comment', 'type_count' => 1],
+            ['name' => '3 Comments Written', 'type' => 'Comment', 'type_count' => 5],
+            ['name' => '5 Comments Written', 'type' => 'Comment', 'type_count' => 5],
+            ['name' => '10 Comment Written', 'type' => 'Comment', 'type_count' => 10],
+            ['name' => '20 Comment Written', 'type' => 'Comment', 'type_count' => 20]]
         );
     }
 }
